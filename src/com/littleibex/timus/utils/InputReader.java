@@ -10,7 +10,6 @@ public class InputReader {
     private byte[] buf = new byte[1024];
     private int curChar;
     private int numChars;
-    private SpaceCharFilter filter;
 
     public InputReader(InputStream stream) {
         this.stream = stream;
@@ -65,16 +64,6 @@ public class InputReader {
     }
 
     public boolean isSpaceChar(int c) {
-        if (filter != null)
-            return filter.isSpaceChar(c);
         return c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == -1;
-    }
-
-    public String next() {
-        return readString();
-    }
-
-    public interface SpaceCharFilter {
-        boolean isSpaceChar(int ch);
     }
 }
