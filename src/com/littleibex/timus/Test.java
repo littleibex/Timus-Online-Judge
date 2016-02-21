@@ -1,15 +1,18 @@
 package com.littleibex.timus;
 
 import com.littleibex.timus.utils.InputReader;
-import com.littleibex.timus.utils.OutputWriter;
+
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 public class Test {
 
     public static void main(String[] args) throws Exception {
         InputReader reader = new InputReader(System.in);
-        OutputWriter writer = new OutputWriter(System.out);
+        PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 
-        writer.printLine("Hello World");
+        writer.println("Hello World");
 
         writer.flush();
         writer.close();

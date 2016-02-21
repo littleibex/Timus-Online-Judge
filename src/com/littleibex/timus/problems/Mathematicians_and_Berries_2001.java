@@ -1,7 +1,10 @@
 package com.littleibex.timus.problems;
 
 import com.littleibex.timus.utils.InputReader;
-import com.littleibex.timus.utils.OutputWriter;
+
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 /**
  * @see <a href="http://acm.timus.ru/problem.aspx?space=1&num=2001">2001. Mathematicians and Berries</a>
@@ -10,7 +13,7 @@ public class Mathematicians_and_Berries_2001 {
 
     public static void main(String[] args) throws Exception {
         InputReader reader = new InputReader(System.in);
-        OutputWriter writer = new OutputWriter(System.out);
+        PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 
         int a1 = reader.readInt();
         int b1 = reader.readInt();

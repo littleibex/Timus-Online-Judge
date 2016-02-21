@@ -1,7 +1,10 @@
 package com.littleibex.timus.problems;
 
 import com.littleibex.timus.utils.InputReader;
-import com.littleibex.timus.utils.OutputWriter;
+
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 
 /**
  * @see <a href="http://acm.timus.ru/problem.aspx?space=1&num=1197">1197. Lonesome Knight</a>
@@ -10,13 +13,13 @@ public class Lonesome_Knight_1197 {
 
     public static void main(String[] args) throws Exception {
         InputReader reader = new InputReader(System.in);
-        OutputWriter writer = new OutputWriter(System.out);
+        PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 
         int N = reader.readInt();
 
         for (int i = 1; i <= N; i++) {
             String p = reader.readString();
-            writer.printLine(new Lonesome_Knight_1197().solve(p));
+            writer.println(new Lonesome_Knight_1197().solve(p));
         }
 
         writer.flush();
