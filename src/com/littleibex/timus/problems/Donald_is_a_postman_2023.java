@@ -22,7 +22,7 @@ public class Donald_is_a_postman_2023 {
         writer.close();
     }
 
-    public int solve(InputReader reader) {
+    public int solve(InputReader reader) throws Exception {
         int n = reader.readInt();
 
         int temp = 1, result = 0, position;
