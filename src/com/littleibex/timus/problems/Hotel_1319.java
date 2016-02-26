@@ -16,30 +16,19 @@ public class Hotel_1319 {
         PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 
         int N = reader.readInt();
-        int rows = N * 2 - 1;
-        int[][] a = new int[rows][N];
-        int count = 1;
+        int start = N * (N - 1) / 2 + 1;
 
-        for (int i = 0; i < rows; i++) {
-            int y = Math.min(i, N - 1);
-            for (int j = Math.max(0, i - N + 1); j <= y; j++) {
-                a[i][j] = count++;
-            }
-        }
-
-        count = 1;
         for (int i = 0; i < N; i++) {
-            for (int j = rows - 1; j >= 0; j--) {
-                if (a[j][i] > 0) {
-                    writer.print(a[j][i]);
-                    if (count % N == 0) {
-                        writer.println();
-                    } else {
-                        writer.print(' ');
-                    }
-                    count++;
-                }
+            writer.print(start);
+            writer.print(' ');
+            int r = start;
+            for (int j = 1; j < N; j++) {
+                r -= (i < j) ? N + i - j : N + j - i - 1;
+                writer.print(r);
+                writer.print(' ');
             }
+            start += N - i;
+            writer.println();
         }
 
         writer.flush();
