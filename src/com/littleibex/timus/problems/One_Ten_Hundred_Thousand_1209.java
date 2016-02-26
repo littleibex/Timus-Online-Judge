@@ -21,10 +21,10 @@ public class One_Ten_Hundred_Thousand_1209 {
         writer.close();
     }
 
-    public void solve(InputReader reader, PrintWriter writer) {
+    public void solve(InputReader reader, PrintWriter writer) throws Exception {
         int N = reader.readInt();
         for (int i = 0; i < N; i++) {
-            writer.print(isPerfectSquare(8 * Double.parseDouble(reader.readString()) - 7) ? "1 " : "0 ");
+            writer.print(isPerfectSquare(8 * (double) reader.readInt() - 7) ? "1 " : "0 ");
         }
     }
 

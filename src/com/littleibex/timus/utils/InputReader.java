@@ -1,8 +1,6 @@
 package com.littleibex.timus.utils;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.InputMismatchException;
 
 public class InputReader {
 
@@ -15,23 +13,17 @@ public class InputReader {
         this.stream = stream;
     }
 
-    public int read() {
-        if (numChars == -1)
-            throw new InputMismatchException();
+    public int read() throws Exception {
         if (curChar >= numChars) {
             curChar = 0;
-            try {
-                numChars = stream.read(buf);
-            } catch (IOException e) {
-                throw new InputMismatchException();
-            }
+            numChars = stream.read(buf);
             if (numChars <= 0)
                 return -1;
         }
         return buf[curChar++];
     }
 
-    public int readInt() {
+    public int readInt() throws Exception {
         int c = read();
         while (isSpaceChar(c))
             c = read();
@@ -42,8 +34,6 @@ public class InputReader {
         }
         int res = 0;
         do {
-            if (c < '0' || c > '9')
-                throw new InputMismatchException();
             res *= 10;
             res += c - '0';
             c = read();
@@ -51,7 +41,7 @@ public class InputReader {
         return res * sgn;
     }
 
-    public String readString() {
+    public String readString() throws Exception {
         int c = read();
         while (isSpaceChar(c))
             c = read();
