@@ -1,34 +1,24 @@
 package com.littleibex.timus.problems;
 
-import com.littleibex.timus.utils.InputReader;
-
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.IOException;
 
 /**
  * @see <a href="http://acm.timus.ru/problem.aspx?space=1&num=1567">1567. SMS-spam</a>
  */
 public class SMS_spam_1567 {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         new SMS_spam_1567().run();
     }
 
-    public void run() throws Exception {
-        InputReader reader = new InputReader(System.in);
-        PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
-
+    public void run() throws IOException {
         int cost = 0;
-        int c = reader.read();
+        int c = System.in.read();
         while (c != '\n') {
             cost += getCharCost(c);
-            c = reader.read();
+            c = System.in.read();
         }
-        writer.print(cost);
-
-        writer.flush();
-        writer.close();
+        System.out.print(cost);
     }
 
     public int getCharCost(int c) {
