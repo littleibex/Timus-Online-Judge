@@ -7,7 +7,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 /**
- * @see <a href="http://acm.timus.ru/problem.aspx?space=1&num=1068">1068. 1, 10, 100, 1000...</a>
+ * @see <a href="http://acm.timus.ru/problem.aspx?space=1&num=1319">1319. Hotel</a>
  */
 public class Hotel_1319 {
 
