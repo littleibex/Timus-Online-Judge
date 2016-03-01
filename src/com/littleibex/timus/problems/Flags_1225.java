@@ -16,7 +16,7 @@ public class Flags_1225 {
     public void run() throws IOException {
         IOUtils io = new IOUtils();
 
-        int n = io.nextInt() - 2;
+        int n = io.readInt() - 2;
         long res = 2, n1 = 2, n2 = 2;
         while (n > 0) {
             res = n1 + n2;

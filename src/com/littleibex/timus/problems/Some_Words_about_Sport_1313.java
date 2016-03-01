@@ -12,14 +12,14 @@ public class Some_Words_about_Sport_1313 {
     public static void main(String[] args) throws IOException {
         IOUtils io = new IOUtils();
 
-        int N = io.nextInt();
+        int N = io.readInt();
         int[][] a = new int[N][N];
 
         int i, j, k;
 
         for (i = 0; i < N; ++i) {
             for (j = 0; j < N; ++j) {
-                a[i][j] = io.nextInt();
+                a[i][j] = io.readInt();
             }
         }
 

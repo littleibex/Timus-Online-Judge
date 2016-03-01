@@ -12,7 +12,7 @@ public class Chocolate_2_1639 {
     public static void main(String[] args) throws IOException {
         IOUtils io = new IOUtils();
 
-        io.writer.print(((io.nextInt() * io.nextInt()) & 1) == 0 ? "[:=[first]" : "[second]=:]");
+        io.writer.print(((io.readInt() * io.readInt()) & 1) == 0 ? "[:=[first]" : "[second]=:]");
 
         io.shutdown();
     }

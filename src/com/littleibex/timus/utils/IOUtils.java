@@ -1,17 +1,14 @@
 package com.littleibex.timus.utils;
 
 import java.io.*;
-import java.util.StringTokenizer;
 
 public class IOUtils {
 
     public PrintWriter writer;
     private BufferedReader reader;
-    private StringTokenizer tokenizer;
 
     public IOUtils() {
-        reader = new BufferedReader(new InputStreamReader(System.in), 32768);
-        tokenizer = new StringTokenizer("");
+        reader = new BufferedReader(new InputStreamReader(System.in));
         writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
     }
 
@@ -19,23 +16,53 @@ public class IOUtils {
         return reader.read();
     }
 
-    public String next() throws IOException {
-        while (!tokenizer.hasMoreTokens()) {
-            tokenizer = new StringTokenizer(reader.readLine());
+    public String readString() throws IOException {
+        int c = reader.read();
+        while (isSpaceChar(c))
+            c = reader.read();
+        StringBuilder res = new StringBuilder();
+        do {
+            res.appendCodePoint(c);
+            c = reader.read();
+        } while (!isSpaceChar(c));
+        return res.toString();
+    }
+
+    public int readInt() throws IOException {
+        int i = 0;
+        int c = reader.read();
+        while (isSpaceChar(c))
+            c = reader.read();
+        int sign = 1;
+        if (c == '-') {
+            sign = -1;
+            c = reader.read();
         }
-        return tokenizer.nextToken();
+        do {
+            i = i * 10 + c - '0';
+            c = reader.read();
+        } while (!isSpaceChar(c));
+        return i * sign;
     }
 
-    public int nextInt() throws IOException {
-        return Integer.parseInt(next());
-    }
-
-    public double nextDouble() throws IOException {
-        return Double.parseDouble(next());
+    public int readPositiveInt() throws IOException {
+        int i = 0;
+        int c = reader.read();
+        while (isSpaceChar(c))
+            c = reader.read();
+        do {
+            i = i * 10 + c - '0';
+            c = reader.read();
+        } while (!isSpaceChar(c));
+        return i;
     }
 
     public void shutdown() {
         writer.flush();
         writer.close();
+    }
+
+    private boolean isSpaceChar(int c) {
+        return c == ' ' || c == '\n' || c == '\r' || c == -1;
     }
 }

@@ -12,20 +12,20 @@ public class Psych_Ups_Eigenvalues_1880 {
     public static void main(String[] args) throws IOException {
         IOUtils io = new IOUtils();
 
-        int n1 = io.nextInt();
+        int n1 = io.readInt();
         int[] evalues1 = new int[n1];
         for (int i = 0; i < n1; i++) {
-            evalues1[i] = io.nextInt();
+            evalues1[i] = io.readInt();
         }
-        int n2 = io.nextInt();
+        int n2 = io.readInt();
         int[] evalues2 = new int[n2];
         for (int i = 0; i < n2; i++) {
-            evalues2[i] = io.nextInt();
+            evalues2[i] = io.readInt();
         }
-        int n3 = io.nextInt();
+        int n3 = io.readInt();
         int[] evalues3 = new int[n3];
         for (int i = 0; i < n3; i++) {
-            evalues3[i] = io.nextInt();
+            evalues3[i] = io.readInt();
         }
 
         int i = 0, j = 0, k = 0, result = 0;

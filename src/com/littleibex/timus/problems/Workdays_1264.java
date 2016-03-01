@@ -10,7 +10,7 @@ public class Workdays_1264 {
     public static void main(String[] args) throws Exception {
         IOUtils io = new IOUtils();
 
-        io.writer.print(io.nextInt() * (io.nextInt() + 1));
+        io.writer.print(io.readInt() * (io.readInt() + 1));
 
         io.shutdown();
     }

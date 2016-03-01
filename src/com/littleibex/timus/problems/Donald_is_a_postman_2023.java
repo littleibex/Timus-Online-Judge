@@ -17,11 +17,11 @@ public class Donald_is_a_postman_2023 {
     public void run() throws IOException {
         IOUtils io = new IOUtils();
 
-        int n = io.nextInt();
+        int n = io.readInt();
         int temp = 1, result = 0, position;
 
         for (int i = 0; i < n; i++) {
-            position = getPosition(io.next());
+            position = getPosition(io.readString());
             result += Math.abs(temp - position);
             temp = position;
         }

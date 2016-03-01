@@ -12,12 +12,12 @@ public class Mathematicians_and_Berries_2001 {
     public static void main(String[] args) throws IOException {
         IOUtils io = new IOUtils();
 
-        int a1 = io.nextInt();
-        int b1 = io.nextInt();
-        io.nextInt();
-        int b2 = io.nextInt();
-        int a3 = io.nextInt();
-        io.nextInt();
+        int a1 = io.readInt();
+        int b1 = io.readInt();
+        io.readInt();
+        int b2 = io.readInt();
+        int a3 = io.readInt();
+        io.readInt();
 
         io.writer.print(a1 - a3);
         io.writer.print(" ");

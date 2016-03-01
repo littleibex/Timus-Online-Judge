@@ -7,7 +7,7 @@ public class Test {
     public static void main(String[] args) throws Exception {
         IOUtils io = new IOUtils();
 
-        io.writer.print(io.next());
+        io.writer.print(io.readString());
 
         io.shutdown();
     }

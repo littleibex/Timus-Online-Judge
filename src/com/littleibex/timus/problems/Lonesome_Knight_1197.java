@@ -16,10 +16,10 @@ public class Lonesome_Knight_1197 {
     public void run() throws IOException {
         IOUtils io = new IOUtils();
 
-        int N = io.nextInt();
+        int N = io.readInt();
 
         for (int i = 1; i <= N; i++) {
-            String p = io.next();
+            String p = io.readString();
             io.writer.println(solve(p));
         }
 

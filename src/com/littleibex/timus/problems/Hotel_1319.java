@@ -12,7 +12,7 @@ public class Hotel_1319 {
     public static void main(String[] args) throws IOException {
         IOUtils io = new IOUtils();
 
-        int N = io.nextInt();
+        int N = io.readInt();
         int start = N * (N - 1) / 2 + 1;
 
         for (int i = 0; i < N; i++) {

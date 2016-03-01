@@ -16,15 +16,15 @@ public class Teamwork_1581 {
     public void run() throws IOException {
         IOUtils io = new IOUtils();
 
-        int n = io.nextInt();
+        int n = io.readInt();
         int x;
         int count = 1;
 
-        int prev = io.nextInt();
+        int prev = io.readInt();
         n--;
 
         while (n > 0) {
-            x = io.nextInt();
+            x = io.readInt();
             if (x != prev) {
                 io.writer.print(count);
                 io.writer.print(' ');

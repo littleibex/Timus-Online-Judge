@@ -12,10 +12,10 @@ public class Titan_Ruins_Hidden_Entrance_1910 {
     public static void main(String[] args) throws IOException {
         IOUtils io = new IOUtils();
 
-        int n = io.nextInt();
+        int n = io.readInt();
         int[] a = new int[n];
         for (int i = 0; i < n; i++) {
-            a[i] = io.nextInt();
+            a[i] = io.readInt();
         }
 
         int max = 0;

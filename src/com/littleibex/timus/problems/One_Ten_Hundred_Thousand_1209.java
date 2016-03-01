@@ -16,9 +16,9 @@ public class One_Ten_Hundred_Thousand_1209 {
     public void run() throws IOException {
         IOUtils io = new IOUtils();
 
-        int N = io.nextInt();
+        int N = io.readInt();
         for (int i = 0; i < N; i++) {
-            io.writer.print(isPerfectSquare(8 * (double) io.nextInt() - 7) ? "1 " : "0 ");
+            io.writer.print(isPerfectSquare(8 * (double) io.readInt() - 7) ? "1 " : "0 ");
         }
 
         io.shutdown();

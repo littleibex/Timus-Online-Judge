@@ -12,7 +12,7 @@ public class Four_Imps_1924 {
     public static void main(String[] args) throws IOException {
         IOUtils io = new IOUtils();
 
-        io.writer.print((((io.nextInt() - 1) >> 1) & 1) == 0 ? "grimy" : "black");
+        io.writer.print((((io.readInt() - 1) >> 1) & 1) == 0 ? "grimy" : "black");
 
         io.shutdown();
     }

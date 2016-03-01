@@ -12,7 +12,7 @@ public class Sum_1068 {
     public static void main(String[] args) throws IOException {
         IOUtils io = new IOUtils();
 
-        int N = io.nextInt();
+        int N = io.readInt();
         io.writer.print(N > 0 ? N * (N + 1) / 2 : N * (N - 1) / -2 + 1);
 
         io.shutdown();
