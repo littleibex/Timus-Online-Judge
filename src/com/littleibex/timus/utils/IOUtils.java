@@ -16,6 +16,10 @@ public class IOUtils {
         return reader.read();
     }
 
+    public String readLine() throws IOException {
+        return reader.readLine();
+    }
+
     public String readString() throws IOException {
         int c = reader.read();
         while (isSpaceChar(c))
