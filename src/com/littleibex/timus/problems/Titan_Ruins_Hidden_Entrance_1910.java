@@ -1,24 +1,21 @@
 package com.littleibex.timus.problems;
 
-import com.littleibex.timus.utils.InputReader;
+import com.littleibex.timus.utils.IOUtils;
 
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.IOException;
 
 /**
  * @see <a href="http://acm.timus.ru/problem.aspx?space=1&num=1910">1910. Titan Ruins: Hidden Entrance</a>
  */
 public class Titan_Ruins_Hidden_Entrance_1910 {
 
-    public static void main(String[] args) throws Exception {
-        InputReader reader = new InputReader(System.in);
-        PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+    public static void main(String[] args) throws IOException {
+        IOUtils io = new IOUtils();
 
-        int n = reader.readInt();
+        int n = io.nextInt();
         int[] a = new int[n];
         for (int i = 0; i < n; i++) {
-            a[i] = reader.readInt();
+            a[i] = io.nextInt();
         }
 
         int max = 0;
@@ -34,11 +31,10 @@ public class Titan_Ruins_Hidden_Entrance_1910 {
             }
         }
 
-        writer.print(max);
-        writer.print(' ');
-        writer.print(mid);
+        io.writer.print(max);
+        io.writer.print(' ');
+        io.writer.print(mid);
 
-        writer.flush();
-        writer.close();
+        io.shutdown();
     }
 }

@@ -1,5 +1,7 @@
 package com.littleibex.timus.problems;
 
+import com.littleibex.timus.utils.IOUtils;
+
 import java.io.IOException;
 
 /**
@@ -12,13 +14,17 @@ public class SMS_spam_1567 {
     }
 
     public void run() throws IOException {
+        IOUtils io = new IOUtils();
+
         int cost = 0;
-        int c = System.in.read();
+        int c = io.read();
         while (c != '\n') {
             cost += getCharCost(c);
-            c = System.in.read();
+            c = io.read();
         }
-        System.out.print(cost);
+        io.writer.print(cost);
+
+        io.shutdown();
     }
 
     public int getCharCost(int c) {

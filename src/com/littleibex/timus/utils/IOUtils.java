@@ -1,51 +1,41 @@
 package com.littleibex.timus.utils;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class IOUtils {
 
-    public static String readString() throws IOException {
-        int c = System.in.read();
-        while (isSpaceChar(c))
-            c = System.in.read();
-        StringBuilder res = new StringBuilder();
-        do {
-            res.appendCodePoint(c);
-            c = System.in.read();
-        } while (!isSpaceChar(c));
-        return res.toString();
+    public PrintWriter writer;
+    private BufferedReader reader;
+    private StringTokenizer tokenizer;
+
+    public IOUtils() {
+        reader = new BufferedReader(new InputStreamReader(System.in), 32768);
+        tokenizer = new StringTokenizer("");
+        writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
     }
 
-    public static int readInt() throws IOException {
-        int i = 0;
-        int c = System.in.read();
-        while (isSpaceChar(c))
-            c = System.in.read();
-        int sign = 1;
-        if (c == '-') {
-            sign = -1;
-            c = System.in.read();
+    public int read() throws IOException {
+        return reader.read();
+    }
+
+    public String next() throws IOException {
+        while (!tokenizer.hasMoreTokens()) {
+            tokenizer = new StringTokenizer(reader.readLine());
         }
-        do {
-            i = i * 10 + c - '0';
-            c = System.in.read();
-        } while (!isSpaceChar(c));
-        return i * sign;
+        return tokenizer.nextToken();
     }
 
-    public static int readPositiveInt() throws IOException {
-        int i = 0;
-        int c = System.in.read();
-        while (isSpaceChar(c))
-            c = System.in.read();
-        do {
-            i = i * 10 + c - '0';
-            c = System.in.read();
-        } while (!isSpaceChar(c));
-        return i;
+    public int nextInt() throws IOException {
+        return Integer.parseInt(next());
     }
 
-    private static boolean isSpaceChar(int c) {
-        return c == ' ' || c == '\n' || c == '\r' || c == -1;
+    public double nextDouble() throws IOException {
+        return Double.parseDouble(next());
+    }
+
+    public void shutdown() {
+        writer.flush();
+        writer.close();
     }
 }

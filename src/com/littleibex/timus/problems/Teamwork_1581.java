@@ -1,5 +1,7 @@
 package com.littleibex.timus.problems;
 
+import com.littleibex.timus.utils.IOUtils;
+
 import java.io.IOException;
 
 /**
@@ -12,44 +14,32 @@ public class Teamwork_1581 {
     }
 
     public void run() throws IOException {
-        int n = readInt();
+        IOUtils io = new IOUtils();
+
+        int n = io.nextInt();
         int x;
         int count = 1;
 
-        int prev = readInt();
+        int prev = io.nextInt();
         n--;
 
         while (n > 0) {
-            x = readInt();
+            x = io.nextInt();
             if (x != prev) {
-                System.out.print(count);
-                System.out.print(' ');
-                System.out.print(prev);
-                System.out.print(' ');
+                io.writer.print(count);
+                io.writer.print(' ');
+                io.writer.print(prev);
+                io.writer.print(' ');
                 count = 0;
             }
             count++;
             prev = x;
             n--;
         }
-        System.out.print(count);
-        System.out.print(' ');
-        System.out.print(prev);
-    }
+        io.writer.print(count);
+        io.writer.print(' ');
+        io.writer.print(prev);
 
-    private int readInt() throws IOException {
-        int i = 0;
-        int c = System.in.read();
-        while (isSpaceChar(c))
-            c = System.in.read();
-        do {
-            i = i * 10 + c - '0';
-            c = System.in.read();
-        } while (!isSpaceChar(c));
-        return i;
-    }
-
-    private boolean isSpaceChar(int c) {
-        return c == ' ' || c == '\n' || c == '\r' || c == -1;
+        io.shutdown();
     }
 }

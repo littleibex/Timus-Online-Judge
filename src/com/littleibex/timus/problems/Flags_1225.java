@@ -14,7 +14,9 @@ public class Flags_1225 {
     }
 
     public void run() throws IOException {
-        int n = IOUtils.readPositiveInt() - 2;
+        IOUtils io = new IOUtils();
+
+        int n = io.nextInt() - 2;
         long res = 2, n1 = 2, n2 = 2;
         while (n > 0) {
             res = n1 + n2;
@@ -22,6 +24,8 @@ public class Flags_1225 {
             n2 = res;
             n--;
         }
-        System.out.print(res);
+        io.writer.print(res);
+
+        io.shutdown();
     }
 }

@@ -1,29 +1,29 @@
 package com.littleibex.timus.problems;
 
-import com.littleibex.timus.utils.InputReader;
+import com.littleibex.timus.utils.IOUtils;
 
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.IOException;
 
 /**
  * @see <a href="http://acm.timus.ru/problem.aspx?space=1&num=1197">1197. Lonesome Knight</a>
  */
 public class Lonesome_Knight_1197 {
 
-    public static void main(String[] args) throws Exception {
-        InputReader reader = new InputReader(System.in);
-        PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+    public static void main(String[] args) throws IOException {
+        new Lonesome_Knight_1197().run();
+    }
 
-        int N = reader.readInt();
+    public void run() throws IOException {
+        IOUtils io = new IOUtils();
+
+        int N = io.nextInt();
 
         for (int i = 1; i <= N; i++) {
-            String p = reader.readString();
-            writer.println(new Lonesome_Knight_1197().solve(p));
+            String p = io.next();
+            io.writer.println(solve(p));
         }
 
-        writer.flush();
-        writer.close();
+        io.shutdown();
     }
 
     public int solve(String position) {

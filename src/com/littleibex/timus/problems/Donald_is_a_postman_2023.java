@@ -1,10 +1,8 @@
 package com.littleibex.timus.problems;
 
-import com.littleibex.timus.utils.InputReader;
+import com.littleibex.timus.utils.IOUtils;
 
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.IOException;
 import java.security.InvalidParameterException;
 
 /**
@@ -12,28 +10,25 @@ import java.security.InvalidParameterException;
  */
 public class Donald_is_a_postman_2023 {
 
-    public static void main(String[] args) throws Exception {
-        InputReader reader = new InputReader(System.in);
-        PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
-
-        writer.print(new Donald_is_a_postman_2023().solve(reader));
-
-        writer.flush();
-        writer.close();
+    public static void main(String[] args) throws IOException {
+        new Donald_is_a_postman_2023().run();
     }
 
-    public int solve(InputReader reader) throws Exception {
-        int n = reader.readInt();
+    public void run() throws IOException {
+        IOUtils io = new IOUtils();
 
+        int n = io.nextInt();
         int temp = 1, result = 0, position;
 
         for (int i = 0; i < n; i++) {
-            position = getPosition(reader.readString());
+            position = getPosition(io.next());
             result += Math.abs(temp - position);
             temp = position;
         }
 
-        return result;
+        io.writer.print(result);
+
+        io.shutdown();
     }
 
     private int getPosition(String name) {

@@ -1,34 +1,31 @@
 package com.littleibex.timus.problems;
 
-import com.littleibex.timus.utils.InputReader;
+import com.littleibex.timus.utils.IOUtils;
 
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.IOException;
 
 /**
  * @see <a href="http://acm.timus.ru/problem.aspx?space=1&num=1880">1880. Psych Up's Eigenvalues</a>
  */
 public class Psych_Ups_Eigenvalues_1880 {
 
-    public static void main(String[] args) throws Exception {
-        InputReader reader = new InputReader(System.in);
-        PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+    public static void main(String[] args) throws IOException {
+        IOUtils io = new IOUtils();
 
-        int n1 = reader.readInt();
+        int n1 = io.nextInt();
         int[] evalues1 = new int[n1];
         for (int i = 0; i < n1; i++) {
-            evalues1[i] = reader.readInt();
+            evalues1[i] = io.nextInt();
         }
-        int n2 = reader.readInt();
+        int n2 = io.nextInt();
         int[] evalues2 = new int[n2];
         for (int i = 0; i < n2; i++) {
-            evalues2[i] = reader.readInt();
+            evalues2[i] = io.nextInt();
         }
-        int n3 = reader.readInt();
+        int n3 = io.nextInt();
         int[] evalues3 = new int[n3];
         for (int i = 0; i < n3; i++) {
-            evalues3[i] = reader.readInt();
+            evalues3[i] = io.nextInt();
         }
 
         int i = 0, j = 0, k = 0, result = 0;
@@ -68,9 +65,8 @@ public class Psych_Ups_Eigenvalues_1880 {
             i++;
         }
 
-        writer.print(result);
+        io.writer.print(result);
 
-        writer.flush();
-        writer.close();
+        io.shutdown();
     }
 }
