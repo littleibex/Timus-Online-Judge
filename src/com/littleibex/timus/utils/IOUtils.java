@@ -66,7 +66,7 @@ public class IOUtils {
         writer.close();
     }
 
-    private boolean isSpaceChar(int c) {
+    public boolean isSpaceChar(int c) {
         return c == ' ' || c == '\n' || c == '\r' || c == -1;
     }
 }
