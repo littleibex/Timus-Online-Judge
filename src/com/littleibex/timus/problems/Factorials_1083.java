@@ -1,7 +1,5 @@
 package com.littleibex.timus.problems;
 
-import com.littleibex.timus.utils.IOUtils;
-
 import java.io.IOException;
 
 /**
@@ -14,20 +12,16 @@ public class Factorials_1083 {
     }
 
     public void run() throws IOException {
-        IOUtils io = new IOUtils();
+        int c, n = 0, k = 0, f = 1;
 
-        int k = 0;
-        int r = 1;
-
-        int n = io.readPositiveInt();
-        while (io.read() == '!') k++;
-
-        for (int i = n; i > 0; i -= k) {
-            r *= i;
+        while ((c = System.in.read()) != ' ') {
+            n = n * 10 + c - '0';
         }
-
-        io.writer.print(r);
-
-        io.shutdown();
+        while (System.in.read() == '!') k++;
+        while (n > 0) {
+            f *= n;
+            n -= k;
+        }
+        System.out.print(f);
     }
 }
