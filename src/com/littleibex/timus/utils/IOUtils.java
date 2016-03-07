@@ -61,6 +61,12 @@ public class IOUtils {
         return i;
     }
 
+    public void printString(char... string) {
+        for (char c : string) {
+            writer.print(c);
+        }
+    }
+
     public void shutdown() {
         writer.flush();
         writer.close();
